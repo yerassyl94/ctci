@@ -15,28 +15,22 @@ bool isPalindrome(string s){
 	}
 
 	for (auto const& x: charMap){
-		if (x.second == 1){
+		if (x.second % 2 == 1){
 			if (isCenterExist){
-				result=false;
-				break;
+				return false;
 			}else {
 				isCenterExist = true;
 			}
 		}
-		else if(x.second % 2 == 1){
-			result = false;
-			break;
-		}
-		else {
-			result = true;
-		}
 	}
 
-	return result;
+	return true;
 }
 
 int main(){
 	bool res = isPalindrome("tact coa");
+	bool res1 = isPalindrome("aaaabbbccddd");
 	cout<<"result:"<<res<<endl;
+	cout<<"result:"<<res1<<endl;
 	return 0;
 }
